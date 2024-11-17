@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhant Medar</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="https://siddhantmedar.github.io/" class="text-xl font-bold">Siddhant Medar</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-blue-200">About</a>
+                <a href="#experience" class="hover:text-blue-200">Experience</a>
+                <a href="#skills" class="hover:text-blue-200">Skills</a>
+                <a href="#projects" class="hover:text-blue-200">Projects</a>
+                <a href="#interests" class="hover:text-blue-200">Interests</a>
+                <a href="#contact" class="hover:text-blue-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center animate-fadeIn">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl font-bold mb-4">Data Scientist 👨‍💻</h1>
+                <p class="text-xl mb-6">AI/ML Enthusiast | NLP & LLMs | Passionate about exploring and applying AI to tackle real-world challenges with curiosity and a commitment to continuous learning. ⚡</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://linkedin.com/in/medarsiddhant" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition duration-300">LinkedIn</a>
+                    <a href="https://github.com/siddhantmedar" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full transition duration-300">GitHub</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="assets/images/profile.jpg" alt="Siddhant Medar" class="rounded-full mx-auto w-64 h-64 object-cover border-4 border-blue-200">
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">About Me 👋</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg mb-6">
+                    My career journey spans from signal processing and sensing systems at Samsung Research America to a dedicated focus on Natural Language Processing and Large Language Models. With a strong foundation in Electronics and Telecommunications, I bring a unique perspective to addressing complex AI challenges.
+                </p>
+                <p class="text-lg">
+                    Currently, as a Data Scientist at AArete, I leverage NLP and LLMs to develop impactful solutions in the healthcare domain.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Professional Journey 🚀</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold">Data Scientist</h3>
+                    <p class="text-gray-600">AArete, Chicago, IL | Oct. 2024 – Present</p>
+                </div>
+                
+                <div class="mb-12 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold">Network Testing Engineer</h3>
+                    <p class="text-gray-600">Samsung Research America - SMI Lab | Aug. 2023 – Oct. 2024</p>
+                </div>
+
+                <div class="mb-12 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold">Network Testing Engineer Intern</h3>
+                    <p class="text-gray-600">Samsung Research America - SMI Lab | Sep. 2022 – Aug. 2023</p>
+                </div>
+
+                <div class="mb-12 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold">RF Engineer</h3>
+                    <p class="text-gray-600">Amdocs | Feb. 2021 – Aug. 2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Core Competencies 💡</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="font-bold mb-4">Programming</h3>
+                    <p>Python, Java, C/C++, JavaScript, SQL</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="font-bold mb-4">AI & Machine Learning</h3>
+                    <p>Large Language Models, Natural Language Processing, RAG Systems, Computer Vision, Prompt Engineering</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="font-bold mb-4">Core Technologies</h3>
+                    <p>AWS, Distributed Systems</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="font-bold mb-4">Tools & Frameworks</h3>
+                    <p>PyTorch, LangChain, Transformers, Docker, Kubernetes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Featured Projects 🛠️</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold mb-4">Human Activity Recognition System</h3>
+                    <p class="mb-4">
+                        Built a system to classify human activities using classical ML algorithms (SVM, Random Forest) and deep learning models (LSTM).
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold mb-4">Movie Recommendation Engine</h3>
+                    <p class="mb-4">
+                        Developed a recommendation engine using the Netflix Prize dataset, combining content-based and collaborative filtering techniques.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold mb-4">Real-Time Data Processing System</h3>
+                    <p class="mb-4">
+                        Developed an Android application for real-time data streaming, leveraging AWS services for seamless data collection and processing.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold mb-4">Modified Unix V6 File System</h3>
+                    <p class="mb-4">
+                        Implemented the Unix V6 file system to gain a deeper understanding of file system architecture and operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests & Hobbies Section -->
+    <section id="interests" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Beyond Tech 🌟</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="font-bold mb-4 text-xl text-blue-800">📚 Learning</h3>
+                    <p class="text-gray-700">Driven by curiosity and a passion for acquiring new knowledge and skills.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="font-bold mb-4 text-xl text-blue-800">🎵 Music</h3>
+                    <p class="text-gray-700">Passionate about music, with an appreciation for a wide range of genres.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section id="fun-facts" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Quick Facts ⚡</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center">
+                    <span class="text-4xl mb-4 block">🏏</span>
+                    <p class="text-gray-700">Finding happiness and energy in the game of cricket.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center">
+                    <span class="text-4xl mb-4 block">🌅</span>
+                    <p class="text-gray-700">Early bird</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center">
+                    <span class="text-4xl mb-4 block">🎯</span>
+                    <p class="text-gray-700">Problem solver by nature</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Let's Connect 📫</h2>
+            <div class="max-w-md mx-auto text-center">
+                <p class="mb-6 text-blue-800">Feel free to reach out for collaborations or just a friendly hello</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:siddhantsmedar21@gmail.com" class="text-blue-800 hover:text-blue-600 transition duration-300">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/medarsiddhant" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:text-blue-600 transition duration-300">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/siddhantmedar" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:text-blue-600 transition duration-300">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Siddhant Medar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
