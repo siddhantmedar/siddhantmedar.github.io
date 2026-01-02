@@ -55,6 +55,9 @@
         .note-card:hover h2 {
             color: #a5b4fc;
         }
+        .note-card.hidden {
+            display: none;
+        }
         .tag {
             display: inline-block;
             padding: 4px 12px;
@@ -64,6 +67,26 @@
             font-size: 12px;
             color: #a5b4fc;
             font-weight: 500;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .filter-btn.active {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+            color: #a5b4fc;
         }
         .fade-in {
             animation: fadeIn 0.8s ease-out;
@@ -89,16 +112,31 @@
     </nav>
     <div class="max-w-4xl mx-auto px-6 py-12 pt-24 fade-in">
         <h1 class="text-5xl font-bold page-title mb-4">Notes</h1>
-        <p class="text-gray-400 mb-12 text-lg">Deep dives into ML concepts and implementations</p>
+        <p class="text-gray-400 mb-8 text-lg">Deep dives into ML concepts and implementations</p>
 
-        <div class="space-y-6">
-            <a href="cnn-from-scratch.html" class="block group">
+        <div class="flex flex-wrap gap-2 mb-8">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ml">ML</button>
+            <button class="filter-btn" data-filter="leetcode">LeetCode</button>
+        </div>
+
+        <div id="notes-list" class="space-y-6">
+            <a href="cnn-from-scratch.html" class="block group note-item" data-tags="ml">
                 <article class="note-card">
                     <div class="flex items-start justify-between mb-3">
                         <h2 class="text-2xl font-semibold text-white transition">CNN From Scratch</h2>
-                        <span class="tag">NumPy</span>
+                        <span class="tag">ML</span>
                     </div>
                     <p class="text-gray-400 leading-relaxed" style="font-size: 17px;">NumPy implementation of a 2D convolution layer with He initialization, padding, and stride support.</p>
+                </article>
+            </a>
+            <a href="leetcode.html" class="block group note-item" data-tags="leetcode">
+                <article class="note-card">
+                    <div class="flex items-start justify-between mb-3">
+                        <h2 class="text-2xl font-semibold text-white transition">LeetCode Solutions</h2>
+                        <span class="tag">LeetCode</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed" style="font-size: 17px;">My accepted submissions in Python and C++.</p>
                 </article>
             </a>
         </div>
@@ -106,5 +144,27 @@
     <footer class="py-12 text-center">
         <p class="text-gray-600 text-sm">© 2025 Siddhant Medar</p>
     </footer>
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const noteItems = document.querySelectorAll('.note-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                noteItems.forEach(item => {
+                    const tags = item.dataset.tags.split(',');
+                    if (filter === 'all' || tags.includes(filter)) {
+                        item.querySelector('.note-card').classList.remove('hidden');
+                    } else {
+                        item.querySelector('.note-card').classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
