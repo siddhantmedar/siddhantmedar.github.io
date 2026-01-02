@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN From Scratch - Siddhant Medar</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        .code-block {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .code-block-header {
+            background-color: #1e1e1e;
+            padding: 12px 16px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .code-block-header span {
+            color: #888;
+            font-size: 14px;
+        }
+        .code-block pre {
+            margin: 0;
+            padding: 16px;
+            overflow-x: auto;
+        }
+        .code-block code {
+            white-space: pre;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        .hljs {
+            background: transparent !important;
+            padding: 0 !important;
+        }
+        .copy-btn {
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+        .copy-btn:hover {
+            color: #fff;
+        }
+        .copy-btn.copied {
+            color: #4ade80;
+        }
+    </style>
+</head>
+<body style="background-color: #2d2d2d;">
+    <nav class="fixed top-0 right-0 p-6">
+        <div class="flex space-x-6">
+            <a href="../index.html" class="text-gray-400 hover:text-white transition">Home</a>
+            <a href="index.html" class="text-gray-400 hover:text-white transition">Notes</a>
+        </div>
+    </nav>
+    <div class="max-w-5xl mx-auto px-6 py-12 pt-20">
+        <a href="index.html" class="text-gray-500 hover:text-white transition text-sm mb-4 inline-block">&larr; Back to Notes</a>
+
+        <article>
+            <h1 class="text-4xl font-bold text-white mb-2">CNN From Scratch</h1>
+            <p class="text-gray-500 text-base mb-8">NumPy implementation of a 2D convolution layer</p>
+
+            <div class="text-gray-300 space-y-4" style="font-size: 18px; line-height: 1.7;">
+                <p>A minimal implementation of a CNN convolution layer using only NumPy. No PyTorch, no TensorFlow - just matrix operations.</p>
+
+                <h2 class="text-2xl font-semibold text-white mt-8 mb-4">Key concepts</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <li><strong class="text-white">He initialization:</strong> Weights initialized with std = sqrt(2/fan_in) for better gradient flow</li>
+                    <li><strong class="text-white">Padding:</strong> Zero-padding to control output dimensions</li>
+                    <li><strong class="text-white">Stride:</strong> Step size for sliding the kernel</li>
+                    <li><strong class="text-white">Output formula:</strong> ((H - K + 2P) / S) + 1</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-white mt-8 mb-4">Implementation</h2>
+                <div class="code-block">
+                    <div class="code-block-header">
+                        <span></span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <pre><code class="language-python">import numpy as np
+
+
+class CNNFromScratch:
+    def __init__(self, in_channels, out_channels, kernel_size, padding, stride=1, bias=False):
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.kernel_size = kernel_size
+        self.padding = padding
+        self.stride = stride
+        self.bias = np.random.randn(self.out_channels) if bias else None  # (C_out,)
+
+        # He initialization
+        f_in = self.kernel_size ** 2 * self.in_channels  # fan_in = K * K * C_in
+        std = np.sqrt(2 / f_in)
+        self.weight = np.random.randn(
+            self.out_channels, self.in_channels, self.kernel_size, self.kernel_size
+        ) * std  # (C_out, C_in, K, K)
+
+    def forward(self, x):  # x: (B, C_in, H, W)
+        B, C, H, W = x.shape
+
+        # Apply padding
+        if self.padding > 0:
+            x = np.pad(
+                x,
+                pad_width=(
+                    (0, 0),                          # batch
+                    (0, 0),                          # channel
+                    (self.padding, self.padding),   # height
+                    (self.padding, self.padding)    # width
+                ),
+                mode='constant'
+            )  # x: (B, C_in, H + 2P, W + 2P)
+
+        # Output dimensions
+        H_out = ((H - self.kernel_size + 2 * self.padding) // self.stride) + 1
+        W_out = ((W - self.kernel_size + 2 * self.padding) // self.stride) + 1
+
+        output = np.zeros((B, self.out_channels, H_out, W_out))  # (B, C_out, H_out, W_out)
+
+        # Convolution
+        for b in range(B):
+            for c_out in range(self.out_channels):
+                for i in range(H_out):
+                    for j in range(W_out):
+                        h_start = i * self.stride
+                        h_end = h_start + self.kernel_size
+                        w_start = j * self.stride
+                        w_end = w_start + self.kernel_size
+
+                        x_patch = x[b, :, h_start:h_end, w_start:w_end]  # (C_in, K, K)
+                        conv_sum = np.sum(x_patch * self.weight[c_out])  # (C_in, K, K) * (C_in, K, K) -> scalar
+
+                        if self.bias is not None:
+                            conv_sum += self.bias[c_out]  # scalar + scalar
+
+                        output[b, c_out, i, j] = conv_sum
+
+        return output  # (B, C_out, H_out, W_out)
+
+
+# Test
+if __name__ == "__main__":
+    conv = CNNFromScratch(in_channels=3, out_channels=5, kernel_size=3, padding=1, stride=1, bias=True)
+    x = np.random.randn(1, 3, 8, 8)  # (B=1, C_in=3, H=8, W=8)
+    out = conv.forward(x)
+    print(out.shape)  # (1, 5, 8, 8) -> (B, C_out, H_out, W_out)</code></pre>
+                </div>
+
+                <h2 class="text-2xl font-semibold text-white mt-8 mb-4">Complexity</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <li><strong class="text-white">Time:</strong> O(B * C_out * H_out * W_out * C_in * K * K)</li>
+                    <li><strong class="text-white">Space:</strong> O(B * C_out * H_out * W_out) for output</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+    <script>
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block');
+            const code = codeBlock.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.classList.add('copied');
+                setTimeout(() => btn.classList.remove('copied'), 2000);
+            });
+        }
+    </script>
+</body>
+</html>

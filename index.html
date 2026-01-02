@@ -23,14 +23,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="min-h-screen flex items-center justify-center" style="background-color: #2d2d2d;">
-    <div class="max-w-2xl mx-auto px-6 py-16 text-center">
-        <img src="assets/images/profile.jpeg" alt="Siddhant Medar" class="w-32 h-32 rounded-full object-cover mx-auto mb-6">
-        <h1 class="text-4xl font-bold text-white mb-6">Hi, I'm Siddhant</h1>
-        <p class="text-xl text-gray-300 leading-relaxed mb-8">
-            A Data Scientist & ML Engineer. Currently at AArete, building LLM-powered systems for healthcare - RAG pipelines, AI agents, and ML models for document intelligence and information extraction. Previously at Samsung Research America, developing real-time deep learning pipelines and radar-based sensing systems. On the side, I enjoy implementing ML models and architectures from scratch.
-        </p>
-        <div class="flex justify-center space-x-6">
+<body class="min-h-screen" style="background-color: #2d2d2d;">
+    <nav class="fixed top-0 right-0 p-6">
+        <div class="flex space-x-6">
+            <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
+            <a href="notes/index.html" class="text-gray-400 hover:text-white transition">Notes</a>
+        </div>
+    </nav>
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="max-w-2xl mx-auto px-6 py-16 text-center">
+            <img src="assets/images/profile.jpeg" alt="Siddhant Medar" class="w-32 h-32 rounded-full object-cover mx-auto mb-6">
+            <h1 class="text-4xl font-bold text-white mb-6">Hi, I'm Siddhant</h1>
+            <p class="text-gray-300 leading-relaxed mb-8" style="font-size: 18px; line-height: 1.7;">
+                A Data Scientist & ML Engineer. Currently at AArete, building LLM-powered systems for healthcare - RAG pipelines, AI agents, and ML models for document intelligence and information extraction. Previously at Samsung Research America, developing real-time deep learning pipelines and radar-based sensing systems. On the side, I enjoy implementing ML models and architectures from scratch.
+            </p>
+            <div class="flex justify-center space-x-6">
             <a href="https://linkedin.com/in/medarsiddhant" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition">
                 <i class="fab fa-linkedin text-2xl"></i>
             </a>
@@ -40,6 +47,7 @@
             <a href="https://huggingface.co/medarsiddhant" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition">
                 <span class="text-2xl">🤗</span>
             </a>
+            </div>
         </div>
     </div>
 </body>
