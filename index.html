@@ -19,36 +19,324 @@
     <meta name="twitter:title" content="Siddhant Medar - Data Scientist">
     <meta name="twitter:description" content="Data Scientist building LLM-powered systems for healthcare.">
 
-    <title>Siddhant Medar - Data Scientist | ML & LLM Engineer</title>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Siddhant Medar",
+        "url": "https://siddhantmedar.github.io",
+        "jobTitle": "Data Scientist",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "AArete"
+        },
+        "description": "Data Scientist building LLM-powered systems for healthcare. Experienced in RAG pipelines, NLP, and ML model implementation.",
+        "sameAs": [
+            "https://linkedin.com/in/medarsiddhant",
+            "https://github.com/siddhantmedar",
+            "https://huggingface.co/medarsiddhant"
+        ],
+        "knowsAbout": ["Machine Learning", "LLM", "RAG", "NLP", "Deep Learning", "Python"]
+    }
+    </script>
+
+    <title>Siddhant Medar</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+            min-height: 100vh;
+        }
+        ::selection {
+            background: rgba(99, 102, 241, 0.4);
+            color: #fff;
+        }
+        .profile-img {
+            border: 3px solid rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+        .profile-img:hover {
+            border-color: rgba(99, 102, 241, 0.8);
+            box-shadow: 0 0 60px rgba(99, 102, 241, 0.3);
+            transform: scale(1.02);
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        .social-link.linkedin:hover {
+            background: rgba(10, 102, 194, 0.2);
+            border-color: rgba(10, 102, 194, 0.5);
+        }
+        .social-link.github:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .social-link.huggingface:hover {
+            background: rgba(255, 216, 0, 0.15);
+            border-color: rgba(255, 216, 0, 0.4);
+        }
+        .social-link.email:hover {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+        .nav-link {
+            position: relative;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .nav-link.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .highlight {
+            color: #a5b4fc;
+        }
+        .cursor {
+            color: #a5b4fc;
+            animation: blink 0.8s infinite;
+            font-weight: 300;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        /* Loading skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .skeleton-text {
+            height: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        .skeleton-title {
+            height: 2.5em;
+            width: 70%;
+            margin: 0 auto 1.5rem;
+        }
+        .skeleton-desc {
+            height: 6em;
+            width: 100%;
+        }
+        .content-ready .skeleton {
+            display: none;
+        }
+    </style>
 </head>
-<body class="min-h-screen" style="background-color: #2d2d2d;">
-    <nav class="fixed top-0 right-0 p-6">
-        <div class="flex space-x-6">
-            <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
-            <a href="notes/index.html" class="text-gray-400 hover:text-white transition">Notes</a>
+<body>
+    <nav class="fixed top-0 right-0 p-6 z-50">
+        <div class="flex space-x-2">
+            <a href="index.html" class="nav-link active text-white transition">Home</a>
+            <a href="notes/index.html" class="nav-link text-gray-400 hover:text-white transition">Notes</a>
         </div>
     </nav>
     <div class="min-h-screen flex items-center justify-center">
-        <div class="max-w-2xl mx-auto px-6 py-16 text-center">
-            <img src="assets/images/profile.jpeg" alt="Siddhant Medar" class="w-32 h-32 rounded-full object-cover mx-auto mb-6">
-            <h1 class="text-4xl font-bold text-white mb-6">Hi, I'm Siddhant</h1>
-            <p class="text-gray-300 leading-relaxed mb-8" style="font-size: 18px; line-height: 1.7;">
-                A Data Scientist & ML Engineer. Currently at AArete, building LLM-powered systems for healthcare - RAG pipelines, AI agents, and ML models for document intelligence and information extraction. Previously at Samsung Research America, developing real-time deep learning pipelines and radar-based sensing systems. On the side, I enjoy implementing ML models and architectures from scratch.
-            </p>
-            <div class="flex justify-center space-x-6">
-            <a href="https://linkedin.com/in/medarsiddhant" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition">
-                <i class="fab fa-linkedin text-2xl"></i>
-            </a>
-            <a href="https://github.com/siddhantmedar" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-github text-2xl"></i>
-            </a>
-            <a href="https://huggingface.co/medarsiddhant" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition">
-                <span class="text-2xl">🤗</span>
-            </a>
+        <div class="max-w-2xl mx-auto px-6 py-16 text-center fade-in">
+            <img src="assets/images/profile.jpeg" alt="Siddhant Medar - Data Scientist and ML Engineer" class="profile-img w-36 h-36 rounded-full object-cover mx-auto mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"><span id="typing-text"></span><span id="cursor" class="cursor">|</span></h1>
+            <p id="description" class="text-gray-300 leading-relaxed mb-10" style="font-size: 17px; line-height: 1.8;"></p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://linkedin.com/in/medarsiddhant" target="_blank" rel="noopener noreferrer" class="social-link linkedin text-gray-400 hover:text-blue-400" title="LinkedIn" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://github.com/siddhantmedar" target="_blank" rel="noopener noreferrer" class="social-link github text-gray-400 hover:text-white" title="GitHub" aria-label="GitHub Profile">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://huggingface.co/medarsiddhant" target="_blank" rel="noopener noreferrer" class="social-link huggingface text-gray-400 hover:text-yellow-400" title="Hugging Face" aria-label="Hugging Face Profile">
+                    <span class="text-xl">🤗</span>
+                </a>
+                <a href="#" id="email-link" class="social-link email text-gray-400 hover:text-red-400" title="Email" aria-label="Send Email">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
             </div>
         </div>
     </div>
+    <footer class="fixed bottom-0 left-0 right-0 p-6 text-center">
+        <p class="text-gray-600 text-sm">© 2025 Siddhant Medar</p>
+    </footer>
+    <script>
+        (function() {
+            var a = [115,105,100,100,104,97,110,116,115,109,101,100,97,114,50,49,64,103,109,97,105,108,46,99,111,109];
+            var e = a.map(function(c) { return String.fromCharCode(c); }).join('');
+            document.getElementById('email-link').href = 'mai' + 'lto:' + e;
+        })();
+
+        // LLM token decoding animation
+        (function() {
+            const text = "Hi, I'm Siddhant";
+            const el = document.getElementById('typing-text');
+            const cursor = document.getElementById('cursor');
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            let currentIndex = 0;
+
+            function decodeChar(index, iterations = 0) {
+                const targetChar = text[index];
+                const maxIterations = 3 + Math.floor(Math.random() * 3); // 3-5 scrambles
+
+                if (iterations < maxIterations && targetChar !== ' ' && targetChar !== ',' && targetChar !== "'") {
+                    // Show random character (decoding...)
+                    const randomChar = chars[Math.floor(Math.random() * chars.length)];
+                    el.textContent = text.slice(0, index) + randomChar;
+                    setTimeout(() => decodeChar(index, iterations + 1), 30 + Math.random() * 20);
+                } else {
+                    // Settle on correct character
+                    el.textContent = text.slice(0, index + 1);
+
+                    // Move to next character
+                    if (index < text.length - 1) {
+                        const nextChar = text[index + 1];
+                        let delay = 60 + Math.random() * 40;
+                        if (nextChar === ' ') delay = 100;
+                        if (nextChar === ',') delay = 150;
+
+                        setTimeout(() => decodeChar(index + 1, 0), delay);
+                    } else {
+                        // Done - hide cursor
+                        setTimeout(() => {
+                            cursor.style.animation = 'none';
+                            cursor.style.opacity = '0';
+                        }, 800);
+                    }
+                }
+            }
+
+            // Start decoding
+            setTimeout(() => decodeChar(0, 0), 500);
+        })();
+
+        // Text diffusion animation for description
+        (function() {
+            const descEl = document.getElementById('description');
+            const noiseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+            // Define segments: { text, highlight }
+            const segments = [
+                { text: 'A ', highlight: false },
+                { text: 'Data Scientist', highlight: true },
+                { text: ' & ', highlight: false },
+                { text: 'ML Engineer', highlight: true },
+                { text: '. Currently at AArete, building LLM-powered systems for healthcare - RAG pipelines, AI agents, and ML models for document intelligence and information extraction. Previously at Samsung Research America, developing real-time deep learning pipelines and radar-based sensing systems. On the side, I enjoy implementing ML models and architectures from scratch.', highlight: false }
+            ];
+
+            // Build flat character array
+            const chars = [];
+            segments.forEach((seg, segIdx) => {
+                for (let i = 0; i < seg.text.length; i++) {
+                    chars.push({
+                        char: seg.text[i],
+                        segIdx: segIdx,
+                        resolved: seg.text[i] === ' ' || seg.text[i] === '.' || seg.text[i] === ',' || seg.text[i] === '-' || seg.text[i] === '&'
+                    });
+                }
+            });
+
+            function render() {
+                let html = '';
+                let currentSeg = -1;
+
+                chars.forEach((c, i) => {
+                    // Check if we're starting a new segment
+                    if (c.segIdx !== currentSeg) {
+                        // Close previous highlight if any
+                        if (currentSeg >= 0 && segments[currentSeg].highlight) {
+                            html += '</span>';
+                        }
+                        currentSeg = c.segIdx;
+                        // Open new highlight if needed
+                        if (segments[currentSeg].highlight) {
+                            html += '<span class="highlight">';
+                        }
+                    }
+
+                    if (c.resolved) {
+                        html += c.char;
+                    } else {
+                        html += noiseChars[Math.floor(Math.random() * noiseChars.length)];
+                    }
+                });
+
+                // Close final highlight if any
+                if (segments[currentSeg] && segments[currentSeg].highlight) {
+                    html += '</span>';
+                }
+
+                descEl.innerHTML = html;
+            }
+
+            // Get indices of unresolved chars
+            let unresolved = chars.map((c, i) => i).filter(i => !chars[i].resolved);
+
+            function diffuseStep() {
+                if (unresolved.length === 0) return;
+
+                // Resolve ~5% of remaining chars each step
+                const numToResolve = Math.max(2, Math.floor(unresolved.length * 0.06));
+
+                for (let i = 0; i < numToResolve && unresolved.length > 0; i++) {
+                    const randIdx = Math.floor(Math.random() * unresolved.length);
+                    const charIdx = unresolved.splice(randIdx, 1)[0];
+                    chars[charIdx].resolved = true;
+                }
+
+                render();
+
+                if (unresolved.length > 0) {
+                    setTimeout(diffuseStep, 40);
+                }
+            }
+
+            // Start with noise
+            render();
+
+            // Begin diffusion after title animation starts
+            setTimeout(diffuseStep, 600);
+        })();
+    </script>
 </body>
 </html>

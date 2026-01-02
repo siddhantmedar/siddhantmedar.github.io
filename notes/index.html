@@ -4,26 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes - Siddhant Medar</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+            min-height: 100vh;
+        }
+        ::selection {
+            background: rgba(99, 102, 241, 0.4);
+            color: #fff;
+        }
+        .nav-link {
+            position: relative;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .nav-link.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .note-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+        .note-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .note-card:hover h2 {
+            color: #a5b4fc;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: #a5b4fc;
+            font-weight: 500;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-title {
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
-<body style="background-color: #2d2d2d;">
-    <nav class="fixed top-0 right-0 p-6">
-        <div class="flex space-x-6">
-            <a href="../index.html" class="text-gray-400 hover:text-white transition">Home</a>
-            <a href="index.html" class="text-gray-400 hover:text-white transition">Notes</a>
+<body>
+    <nav class="fixed top-0 right-0 p-6 z-50">
+        <div class="flex space-x-2">
+            <a href="../index.html" class="nav-link text-gray-400 hover:text-white transition">Home</a>
+            <a href="index.html" class="nav-link active text-white transition">Notes</a>
         </div>
     </nav>
-    <div class="max-w-5xl mx-auto px-6 py-12 pt-20">
-        <h1 class="text-4xl font-bold text-white mb-12">Notes</h1>
+    <div class="max-w-4xl mx-auto px-6 py-12 pt-24 fade-in">
+        <h1 class="text-5xl font-bold page-title mb-4">Notes</h1>
+        <p class="text-gray-400 mb-12 text-lg">Deep dives into ML concepts and implementations</p>
 
-        <div class="space-y-8">
+        <div class="space-y-6">
             <a href="cnn-from-scratch.html" class="block group">
-                <article class="border border-gray-700 rounded-lg p-6 hover:border-gray-500 transition">
-                    <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition">CNN From Scratch</h2>
-                    <p class="text-gray-400">NumPy implementation of a 2D convolution layer</p>
+                <article class="note-card">
+                    <div class="flex items-start justify-between mb-3">
+                        <h2 class="text-2xl font-semibold text-white transition">CNN From Scratch</h2>
+                        <span class="tag">NumPy</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed" style="font-size: 17px;">NumPy implementation of a 2D convolution layer with He initialization, padding, and stride support.</p>
                 </article>
             </a>
         </div>
     </div>
+    <footer class="py-12 text-center">
+        <p class="text-gray-600 text-sm">© 2025 Siddhant Medar</p>
+    </footer>
 </body>
 </html>
