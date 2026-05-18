@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Siddhant Medar</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+            min-height: 100vh;
+        }
+        ::selection {
+            background: rgba(99, 102, 241, 0.4);
+            color: #fff;
+        }
+        .nav-link {
+            position: relative;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .nav-link.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .project-card:hover h2 {
+            color: #a5b4fc;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: #a5b4fc;
+            font-weight: 500;
+        }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #9ca3af;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+        .project-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-title {
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 right-0 p-6 z-50">
+        <div class="flex space-x-2">
+            <a href="../index.html" class="nav-link text-gray-400 hover:text-white transition">Home</a>
+            <a href="index.html" class="nav-link active text-white transition">Projects</a>
+            <a href="../notes/index.html" class="nav-link text-gray-400 hover:text-white transition">Notes</a>
+        </div>
+    </nav>
+    <div class="max-w-4xl mx-auto px-6 py-12 pt-24 fade-in">
+        <h1 class="text-5xl font-bold page-title mb-4">Projects</h1>
+        <p class="text-gray-400 mb-8 text-lg">Things I've built from scratch</p>
+
+        <div class="space-y-6">
+            <article class="project-card">
+                <div class="flex items-start justify-between mb-3">
+                    <h2 class="text-2xl font-semibold text-white transition">TinyVLM-470M</h2>
+                    <span class="tag">Multimodal</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">A 470M parameter Vision-Language Model built from scratch with LLaMA 4-style iRoPE, Grouped Query Attention, and Mixture of Experts. Trained on a single RTX 3090 in ~35-40 hours, achieving 64.5% preference accuracy.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://github.com/siddhantmedar/tinyvlm-470m" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://huggingface.co/medarsiddhant/tinyvlm-470m" target="_blank" rel="noopener noreferrer" class="project-link"><span>🤗</span> Hugging Face</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="flex items-start justify-between mb-3">
+                    <h2 class="text-2xl font-semibold text-white transition">Diffusion-Based Data Augmentation</h2>
+                    <span class="tag">Computer Vision</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">Controlled benchmark of classical vs diffusion augmentation for few-shot satellite image classification. Fine-tuned SD 1.5 LoRA on EuroSAT, showing selective synthetic augmentation closes to within 0.4% of real-only performance at 64-shot.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://github.com/siddhantmedar/eurosat-diffusion-augmentation" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="flex items-start justify-between mb-3">
+                    <h2 class="text-2xl font-semibold text-white transition">Transformer-Based LLM from Scratch</h2>
+                    <span class="tag">LLM</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">GPT-style decoder-only transformer implemented from scratch in PyTorch with custom BPE tokenizer, KV-cache optimization, and a training loop with mixed precision, gradient clipping, and early stopping.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://github.com/siddhantmedar/transformer-based-llm" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="flex items-start justify-between mb-3">
+                    <h2 class="text-2xl font-semibold text-white transition">Problem Metadata Hider</h2>
+                    <span class="tag">Chrome Extension</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">Chrome extension that hides spoiler metadata (difficulty, hints, topics, company tags) on LeetCode and NeetCode problem pages for distraction-free practice.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://chromewebstore.google.com/detail/problem-metadata-hider/fegfhnkaedmamijlepnbgkahfifkblei" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-chrome"></i> Chrome Web Store</a>
+                    <a href="https://github.com/siddhantmedar/problem-metadata-hider" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    <footer class="py-12 text-center">
+        <p class="text-gray-600 text-sm">© 2026 Siddhant Medar</p>
+    </footer>
+</body>
+</html>
