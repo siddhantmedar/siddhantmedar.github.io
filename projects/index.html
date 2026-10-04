@@ -109,7 +109,7 @@
     </nav>
     <div class="max-w-4xl mx-auto px-6 py-12 pt-24 fade-in">
         <h1 class="text-5xl font-bold page-title mb-4">Projects</h1>
-        <p class="text-gray-400 mb-8 text-lg">Things I've built from scratch</p>
+        <p class="text-gray-400 mb-8 text-lg">Things I've built</p>
 
         <div class="space-y-6">
             <article class="project-card">
@@ -117,7 +117,7 @@
                     <h2 class="text-2xl font-semibold text-white transition">TinyVLM-470M</h2>
                     <span class="tag">Multimodal</span>
                 </div>
-                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">A 470M parameter Vision-Language Model built from scratch with LLaMA 4-style iRoPE, Grouped Query Attention, and Mixture of Experts. Trained on a single RTX 3090 in ~35-40 hours, achieving 64.5% preference accuracy.</p>
+                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">A 470M-parameter vision-language model with a from-scratch language backbone (LLaMA 4-style iRoPE, grouped-query attention, mixture-of-experts) and a frozen pretrained ViT encoder. Trained across four stages, from text pretraining to DPO, on a single RTX 3090 in about 35-40 hours.</p>
                 <div class="flex flex-wrap gap-2">
                     <a href="https://github.com/siddhantmedar/tinyvlm-470m" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                     <a href="https://huggingface.co/medarsiddhant/tinyvlm-470m" target="_blank" rel="noopener noreferrer" class="project-link"><span>🤗</span> Hugging Face</a>
@@ -129,7 +129,7 @@
                     <h2 class="text-2xl font-semibold text-white transition">Diffusion-Based Data Augmentation</h2>
                     <span class="tag">Computer Vision</span>
                 </div>
-                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">Controlled benchmark of classical vs diffusion augmentation for few-shot satellite image classification. Fine-tuned SD 1.5 LoRA on EuroSAT, showing selective synthetic augmentation closes to within 0.4% of real-only performance at 64-shot.</p>
+                <p class="text-gray-400 leading-relaxed mb-4" style="font-size: 17px;">Controlled benchmark of classical vs diffusion augmentation for few-shot satellite image classification. Fine-tuned Stable Diffusion 1.5 with LoRA on EuroSAT and found that blanket synthetic data hurt macro-F1, while targeting weak classes narrowed the gap and classical augmentation led at low shot counts.</p>
                 <div class="flex flex-wrap gap-2">
                     <a href="https://github.com/siddhantmedar/eurosat-diffusion-augmentation" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
